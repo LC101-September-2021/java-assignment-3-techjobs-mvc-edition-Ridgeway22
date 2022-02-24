@@ -34,7 +34,7 @@ public class SearchController {
 
         ArrayList<Job> jobs;
 
-        if (searchType.equals("All") || searchTerm.equals("")){
+        if (searchType.equals("all") || searchTerm.equals("")){
              //jobData.findByValue(searchTerm);
             jobs = JobData.findAll();
 
@@ -54,9 +54,3 @@ public class SearchController {
 
 
 
-// if (searchForm.getSearchField().equals(JobFieldType.ALL)) {
-////            jobs = jobData.findByValue(searchForm.getKeyword());
-////       } else {
-////
-//        }
-//    jobs = jobData.findByColumnAndValue(searchType.getColumn(),   searchType.getSearchField(), searchTerm.getKeyword());
