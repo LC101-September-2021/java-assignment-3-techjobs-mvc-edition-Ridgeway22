@@ -34,10 +34,10 @@ public class SearchController {
 
         ArrayList<Job> jobs;
 
-        if (searchType.equals("all") || searchTerm.equals("")){
+        if (searchType.equals("all") && searchTerm.equals("")){
              //jobData.findByValue(searchTerm);
             jobs = JobData.findAll();
-
+            model.addAttribute("jobs", jobs);
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         }
