@@ -12,9 +12,9 @@
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
 
-    <table class="job-listing">
+    <table class="job-listing" th:each = "tableChoice : ${jobs}" >
 
-        <th:block th:each = "tableChoice : ${jobs}" >
+
 
             <tr>
                 <th>ID:
@@ -43,7 +43,6 @@
                 </th>
             </tr>
 
-        </th:block>
 
     </table>
 
