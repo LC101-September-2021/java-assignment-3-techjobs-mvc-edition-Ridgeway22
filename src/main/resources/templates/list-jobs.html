@@ -13,9 +13,6 @@
     <!-- TODO #1 - Use a loop to display job results in a table. -->
 
     <table class="job-listing" th:each = "tableChoice : ${jobs}" >
-
-
-
             <tr>
                 <th>ID:
                 <td th:text = "${tableChoice.id}" ></td>
@@ -42,8 +39,6 @@
                 <td th:text = "${tableChoice.coreCompetency}"></td>
                 </th>
             </tr>
-
-    </hr>
     </table>
 
 </div>

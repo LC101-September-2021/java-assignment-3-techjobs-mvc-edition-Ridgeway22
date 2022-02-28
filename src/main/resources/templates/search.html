@@ -35,9 +35,9 @@
     </form>
 
     <hr />
-    <table class="job-listing">
+    <table class="job-listing" th:each = "tableChoice : ${jobs}">
 
-        <th:block th:each = "tableChoice : ${jobs}" >
+
 
             <tr>
                 <th>ID:
@@ -66,7 +66,7 @@
                 </th>
             </tr>
 
-        </th:block>
+
 
     </table>
 
