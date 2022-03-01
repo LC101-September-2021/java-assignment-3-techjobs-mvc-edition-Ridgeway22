@@ -31,20 +31,20 @@ public class SearchController {
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
         ArrayList<Job> jobs;
 
-        if (searchType.equals("all") || searchTerm.equals("")){
+        if (searchTerm.equals("all") || searchTerm.equals("") ){
              //jobData.findByValue(searchTerm);
             jobs = JobData.findAll();
             //model.addAttribute("all", "all");
-            model.addAttribute("jobs", jobs);
+          //  model.addAttribute("jobs", jobs);
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
            // model.addAttribute("title", "Jobs with " + columnChoices.get(searchType) + ": " + searchTerm);
-            //model.addAttribute("columns", ListController.columnChoices);
+            model.addAttribute("columns", ListController.columnChoices);
         }
         model.addAttribute("jobs", jobs);
         model.addAttribute("columns", ListController.columnChoices);
-
-        return "list-jobs";
+        model.addAttribute("title","Jobs with " + ListController.columnChoices.get(searchType) + ": " +searchTerm);
+        return "search";
     }
 
 }
