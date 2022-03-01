@@ -18,7 +18,7 @@ import java.util.List;
  * Created by LaunchCode
  */
 public class JobData {
-
+    private static JobData instance;
     private static final String DATA_FILE = "job_data.csv";
     private static boolean isDataLoaded = false;
 
@@ -42,6 +42,12 @@ public class JobData {
         return new ArrayList<>(allJobs);
     }
 
+    public static JobData getInstance() {
+        if (instance == null) {
+            instance = new JobData();
+        }
+        return instance;
+    }
     /**
      * Returns the results of searching the Jobs data by field and search term.
      *
